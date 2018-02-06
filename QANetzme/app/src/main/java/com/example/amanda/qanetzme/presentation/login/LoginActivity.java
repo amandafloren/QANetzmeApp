@@ -45,7 +45,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         new UnderLineText(btn_register);
     }
 
-    @OnClick({R.id.btn_register, R.id.btn_login})
+    @OnClick({R.id.btn_register, R.id.btn_login, R.id.btn_Close})
     public void buttonClicked(View v){
         switch (v.getId()){
             case R.id.btn_login:
@@ -55,6 +55,10 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 NavigationUtils.startActivity(this,
                         RegisterActivity.class,
                         Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                break;
+            case R.id.btn_Close:
+                finish();
+                System.exit(0);
                 break;
         }
     }
